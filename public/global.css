@@ -4,6 +4,7 @@ body {
   padding: 0;
   background-color: var(--primary);
   overflow: hidden; /* Hide scrollbars */
+  min-height: 100vh;
 }
 :root {
   font-size: 16px;
