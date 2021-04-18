@@ -1,4 +1,4 @@
-#Chatio a simple Svelte - firebase chat app.
+# Chatio a simple Svelte - firebase chat app.
 
 how to use it
 
