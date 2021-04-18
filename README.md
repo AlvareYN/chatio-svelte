@@ -8,7 +8,7 @@ cd chatio-svelte
 npm install
 ```
 
-Create a new file under ./src with the following name, firebase_client_credentials.js and copy your firebase credentials there, this file should look like this
+Create a new file under ./src with the following name, firebase_client_credentials.json and copy your firebase credentials there, this file should look like this
 
 ```json
 {
