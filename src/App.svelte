@@ -5,7 +5,6 @@
   import Loader from "./components/Loader.svelte";
   import { auth } from "./firebase";
   import Login from "./Login.svelte";
-  $: console.log($authUser);
   onMount(() => {
     auth.onAuthStateChanged((user) => {
       authUser.set(user);

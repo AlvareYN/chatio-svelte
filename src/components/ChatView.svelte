@@ -9,7 +9,7 @@
     try {
       unsub = await db
         .collection("messages")
-        .orderBy("createdAt", "desc")
+        .orderBy("createdAt", "desc").limit(25)
         .onSnapshot((querySnapshot) => {
           if (!querySnapshot.empty) {
             let tempData = [];
@@ -35,7 +35,6 @@
 </script>
 
 <div class="box" on:scroll={(e)=>{
-    console.log(e)
 }}>
   {#each data as message}
     <div class="message">

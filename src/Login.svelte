@@ -5,8 +5,8 @@
   const signIn = async () => {
     try {
       const provider = new authClass.GoogleAuthProvider();
-      const user = await auth.signInWithPopup(provider);
-      authUser.set(user);
+      const authUserInfo = await auth.signInWithPopup(provider);
+      authUser.set(authUserInfo.user);
     } catch (error) {
       console.log(error);
       authUser.set(null);
