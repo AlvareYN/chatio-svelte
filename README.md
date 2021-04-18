@@ -2,35 +2,29 @@
 
 how to use it
 
-~~~bash
+```bash
 git clone https://github.com/AlvareYN/chatio-svelte
 cd chatio-svelte
 npm install
-~~~
-Configure your credentials from firebase in src/firebase.ts
+```
 
-~~~typescript
-//scr/firebase.ts
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
+Create a new file under ./src with the following name, firebase_client_credentials.js and copy your firebase credentials there, this file should look like this
 
-
-const firebaseConfig = {
-  //your credentials here
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-export const db = firebase.firestore();
-export const auth = firebase.auth();
-export const authClass = firebase.auth;
-
-~~~
+```json
+{
+  "apiKey": "-------your credential-----------",
+  "authDomain": "-------your credential-----------",
+  "projectId": "-------your credential-----------",
+  "storageBucket": "-------your credential-----------",
+  "messagingSenderId": "-------your credential-----------",
+  "appId": "-------your credential-----------"
+}
+```
 
 then run the developer env.
 
-~~~bash
+```bash
 npm run dev
-~~~
+```
+
 
