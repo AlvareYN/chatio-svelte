@@ -6,7 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
-
+import json from '@rollup/plugin-json'
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -60,9 +60,11 @@ export default {
 			dedupe: ['svelte']
 		}),
 		commonjs(),
+		json(),
 		typescript({
 			sourceMap: !production,
-			inlineSources: !production
+			inlineSources: !production,
+			resolveJsonModule: true
 		}),
 
 		// In dev mode, call `npm run start` once

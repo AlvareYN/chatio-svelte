@@ -2,3 +2,4 @@
 /public/build/
 
 .DS_Store
+src/firebase_client_credentials.json

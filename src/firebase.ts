@@ -1,15 +1,15 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-
+import * as firebasesCredentials from "./firebase_client_credentials.json";
 //your credentials here
 const firebaseConfig = {
-  apiKey: "AIzaSyCYDgNnHtAHEpsCSK2KcNVqXhb4OLnDDHY",
-  authDomain: "chatio-3e6fa.firebaseapp.com",
-  projectId: "chatio-3e6fa",
-  storageBucket: "chatio-3e6fa.appspot.com",
-  messagingSenderId: "1001555218032",
-  appId: "1:1001555218032:web:1988144790e4e5a3d12eb5",
+  apiKey: firebasesCredentials.apiKey,
+  authDomain: firebasesCredentials.authDomain,
+  projectId: firebasesCredentials.projectId,
+  storageBucket: firebasesCredentials.storageBucket,
+  messagingSenderId: firebasesCredentials.messagingSenderId,
+  appId: firebasesCredentials.appId,
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
