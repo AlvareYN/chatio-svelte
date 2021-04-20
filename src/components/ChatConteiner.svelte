@@ -1,5 +1,22 @@
 <script lang="ts">
   import { auth } from "../firebase";
+  import { getDefaultColorScheme } from "../utils";
+  import ToggleButton from "./ToggleButton.svelte";
+
+  const changeColorScheme = () => {
+    const colorScheme = localStorage.getItem("default-color");
+    if (colorScheme === "dark-mode") {
+      localStorage.setItem("default-color", "white-mode");
+      let bodyElement = document.getElementsByTagName("body")[0];
+      bodyElement.classList.remove("dark-mode");
+      bodyElement.classList.add("white-mode");
+    } else {
+      localStorage.setItem("default-color", "dark-mode");
+      let bodyElement = document.getElementsByTagName("body")[0];
+      bodyElement.classList.remove("white-mode");
+      bodyElement.classList.add("dark-mode");
+    }
+  };
   const logOut = () => {
     auth.signOut();
   };
@@ -7,6 +24,10 @@
 
 <div class="container">
   <div class="stiky-top">
+    <ToggleButton
+      defaultColor={getDefaultColorScheme()}
+      on:toggle={changeColorScheme}
+    />
     <h1>Chatio!👓</h1>
     <div class="logout">
       <button on:click={logOut}>Log out <img src="/exit.svg" alt="" /></button>
@@ -17,7 +38,11 @@
 
 <style lang="scss">
   .stiky-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
     position: relative;
     .logout {
       position: absolute;
@@ -54,7 +79,6 @@
   }
   .container {
     border-radius: 12px;
-    background-color: var(--black);
     margin-top: 25px;
     margin-right: 22%;
     margin-left: 22%;

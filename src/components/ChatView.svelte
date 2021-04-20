@@ -9,7 +9,8 @@
     try {
       unsub = await db
         .collection("messages")
-        .orderBy("createdAt", "desc").limit(25)
+        .orderBy("createdAt", "desc")
+        .limit(25)
         .onSnapshot((querySnapshot) => {
           if (!querySnapshot.empty) {
             let tempData = [];
@@ -30,12 +31,13 @@
     const messageDate = new Date(timestamp);
     const hour = messageDate.getHours();
     const minutes = messageDate.getMinutes();
-    return `${hour<10?'0'+hour:hour}:${minutes<10?'0'+minutes:minutes}`;
+    return `${hour < 10 ? "0" + hour : hour}:${
+      minutes < 10 ? "0" + minutes : minutes
+    }`;
   };
 </script>
 
-<div class="box" on:scroll={(e)=>{
-}}>
+<div class="box" on:scroll={(e) => {}}>
   {#each data as message}
     <div class="message">
       {#if message.uid === $authUser.uid}
@@ -50,10 +52,22 @@
         </div>
       {/if}
     </div>
+  {:else}
+    <div class="empty">
+      <h1>Wow Such a empty chat 😥, Lets start writing!</h1>
+    </div>
   {/each}
 </div>
 
 <style lang="scss">
+  .empty{
+    height: 100%;
+    display:grid;
+    place-items: center;
+    h1{
+      opacity: 0.6;
+    }
+  }
   .message {
     display: grid;
 
@@ -69,7 +83,6 @@
         border-radius: 50%;
       }
       p {
-        background-color: var(--primary-light);
         border-radius: 20px;
         word-break: break-all;
         min-width: 100px;
@@ -100,7 +113,6 @@
         border-radius: 50%;
       }
       p {
-        background-color: var(--primary-light);
         border-radius: 20px;
         word-break: break-all;
         min-width: 100px;
