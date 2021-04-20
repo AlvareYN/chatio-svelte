@@ -1,5 +1,9 @@
 # Chatio a simple Svelte - firebase chat app.
 
+## Demo
+
+https://chatio-3e6fa.web.app/
+
 how to use it
 
 ```bash
@@ -27,4 +31,9 @@ then run the developer env.
 npm run dev
 ```
 
+## upcoming changes
 
+- better sign-in screen
+- make it posible to write personal chats
+- lets users create accout without using google auth
+- check responsive css
