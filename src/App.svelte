@@ -5,7 +5,12 @@
   import Loader from "./components/Loader.svelte";
   import { auth } from "./firebase";
   import Login from "./Login.svelte";
+  import { getDefaultColorScheme } from "./utils";
+
   onMount(() => {
+    const result = getDefaultColorScheme();
+    let bodyElement = document.getElementsByTagName("body")[0];
+    bodyElement.classList.add(result);
     auth.onAuthStateChanged((user) => {
       authUser.set(user);
     });
