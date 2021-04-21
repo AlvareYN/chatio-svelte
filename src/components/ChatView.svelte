@@ -137,7 +137,7 @@
       0 0 0 1px rgb(10 10 10 / 2%);
     padding: 1.25rem;
     padding: 10px;
-    height: 80vh;
+    height: 70vh;
     overflow-y: scroll;
     display: flex;
     flex-direction: column-reverse;

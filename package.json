@@ -7,7 +7,7 @@
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
     "validate": "svelte-check",
-    "deploy":"npm run build && npx firebase deploy"
+    "deploy": "npm run build && npx firebase deploy"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",

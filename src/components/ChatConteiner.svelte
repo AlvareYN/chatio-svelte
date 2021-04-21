@@ -77,10 +77,26 @@
       text-align: center;
     }
   }
+  @media only screen and (min-width:1000px){
+    .container {
+    border-radius: 12px;
+    margin-top: 25px;
+    margin-right: 22%!important;
+    margin-left: 22%!important;
+  }
+  }
+  @media only screen and (min-width:730px){
+    .container {
+    border-radius: 12px;
+    margin-top: 25px;
+    margin-right: 10%!important;
+    margin-left: 10%!important;
+  }
+  }
   .container {
     border-radius: 12px;
     margin-top: 25px;
-    margin-right: 22%;
-    margin-left: 22%;
+    margin-right: 3%;
+    margin-left: 3%;
   }
 </style>

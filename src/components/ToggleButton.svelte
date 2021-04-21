@@ -12,7 +12,6 @@
 
 <div class="buttons">
   <div class="wrapper white-mode">
-    <label for="">White-Mode</label>
     <input
       type="radio"
       class="white"
@@ -22,7 +21,6 @@
     />
   </div>
   <div class="wrapper black-mode">
-    <label for="">Dark-Mode</label>
     <input
       type="radio"
       class="black"
@@ -45,7 +43,7 @@
   }
   .wrapper.black-mode {
     margin-left: 1rem;
-    background-color: var(--black-light);
+    background-color: var(--black);
     color: var(--color);
   }
   .wrapper.white-mode {
